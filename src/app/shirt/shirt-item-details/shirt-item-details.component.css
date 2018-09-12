@@ -1,0 +1,17 @@
+.details-container{
+   display: table-row;
+}
+
+.shirt-image, .shirt-info{
+  display: table-cell;  
+  vertical-align: top;
+}
+
+.row{
+  display: table-row;
+}
+
+.cell{
+  display: table-cell;
+  padding: 3px;
+}

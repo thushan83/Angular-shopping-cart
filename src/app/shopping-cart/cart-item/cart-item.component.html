@@ -1,0 +1,12 @@
+<div  class="cart-item-container" >
+   <div> <img class="cart-item-picture" src="{{entity.picture}}" /></div>
+   <div>{{entity.name}}</div>
+   <div>USD {{entity.price}}</div>
+   <div>
+     <button (click)="increaseCount(entity)" >+</button>
+     <span class="count">{{entity.count}}</span>
+     <button  (click)="decreaseCount(entity)">-</button>
+   </div>
+   <div>USD {{entity.total}}</div>
+   <div><button (click)="deleteCartItem()" type="button">{{button_title}}</button></div>
+</div>

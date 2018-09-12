@@ -1,0 +1,19 @@
+.item-container{
+  float: left;
+  margin: 10px;
+  box-shadow: 1px 1px 5px 2px;
+  width: 8%;
+  height: 180px;
+  padding:5px;
+}
+
+.item-container div{
+  margin:0 auto;
+  width:90%;
+  text-align: center;
+}
+
+.item-container img{
+  width:90%;
+  
+}

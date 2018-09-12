@@ -1,0 +1,14 @@
+<div class="modal-content">
+        <div class="modal-header">
+          <h4>{{title}}</h4>
+        </div>
+        <div class="modal-body">
+          <div class="cart-items">
+          <app-cart-item  [entity]="cart_item" *ngFor="let cart_item of cart_items"></app-cart-item>
+          <div>
+          <div class="sub-total">Sub Total : {{subtotal}}<div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" (click)="close()" >Close</button>
+        </div>
+</div>

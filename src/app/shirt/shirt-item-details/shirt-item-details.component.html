@@ -1,0 +1,27 @@
+<div class="page-title">Shirt Details</div>
+<div class="details-container" >
+   <div class="shirt-image">
+     <img src="{{shirt.picture}}" />
+   </div>
+   <div class="shirt-info">
+       <div clas="row">
+          <div class="cell header-text">Name </div><div class="cell">{{shirt.name}}</div>
+       </div>
+       <div clas="row">
+          <div class="cell header-text">Price (USD)</div><div class="cell">{{shirt.price}}</div>
+       </div>
+       <div clas="row">
+          <div class="cell header-text">Size</div><div class="cell" >{{shirt.size}}</div>
+       </div>
+       <div clas="row">
+          <div class="cell header-text">Color</div><div class="cell" >{{shirt.colour}}</div>
+       </div>
+       <div class="row">
+          <div class="cell header-text">Items Available </div><div class="cell">{{shirt.quantity}}</div>
+       </div>
+       <div class="row">
+          <div class="cell"><button (click)="addToCart()" type="button">{{button_title}}</button></div>
+          <div class="cell"></div>
+       </div>
+   <div>
+</div>

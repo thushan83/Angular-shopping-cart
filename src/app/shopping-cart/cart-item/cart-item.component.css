@@ -1,0 +1,14 @@
+.cart-item-container{
+   width: 40em;
+   display: table;
+}
+
+.cart-item-container div{
+  width: 5%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cart-item-picture{
+  width:30px;
+}

@@ -1,0 +1,27 @@
+.store-title{
+  font-size: 50px;
+  color: #3a68d8;
+}
+
+.home-icon{
+  width: 23px;
+}
+
+ .cart-icon{
+  width: 43px;
+ }
+
+ .cart-container{
+   float:right;
+   margin-right: 20px;
+   width:30px;
+ }
+
+ .nav{
+   margin-top: 10px;
+ }
+
+ .header-container{
+  background-color: #aeb3b0;
+  padding: 10px;
+ }
