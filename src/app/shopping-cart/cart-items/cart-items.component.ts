@@ -8,6 +8,7 @@ import { ICart } from '../../shopping-cart/icart';
 import { Cart } from '../../shopping-cart/cart';
 import { SimpleModalComponent } from "ngx-simple-modal";
 import { CartCalculator } from '../cart-calculator';
+import { Subscription } from 'rxjs';
 
 export interface ConfirmModel {
   title:string;
@@ -26,9 +27,15 @@ export class CartItemsComponent  extends SimpleModalComponent<ConfirmModel, bool
   cart_items:IShirt[];
   calculator: CartCalculator;
   subtotal: string;
+  subscription: Subscription;
 
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService,
+      private messageService: MessageService) {
     super();
+
+  }
+
+  private setCartContent(){
     var cart = this.storage.get(Constants.SHOPPING_CART_KEY);
     if(cart != null){
       cart = (new Cart()).init(cart.items);
@@ -39,6 +46,12 @@ export class CartItemsComponent  extends SimpleModalComponent<ConfirmModel, bool
   }
 
   ngOnInit() {
-
+     this.setCartContent();
+     this.subscription = this.messageService.getMessage()
+     .subscribe(message => {
+       if (message.text == Constants.MSG_CART_UPDATED){
+          this.setCartContent();
+       }
+     });
   }
 }
