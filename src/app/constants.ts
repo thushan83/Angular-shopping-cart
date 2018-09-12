@@ -5,4 +5,6 @@ export class Constants {
   MESSAGES
   **/
   public static get MSG_CART_UPDATED(): string { return "msg_cart_updated"; };
+  public static get MSG_FILTER_REQUEST(): string { return "mag_filter_request"; };
+
 }

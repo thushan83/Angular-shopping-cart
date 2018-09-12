@@ -14,6 +14,8 @@ import { MessageService } from './services/message.service';
 import { CartItemComponent } from './shopping-cart/cart-item/cart-item.component';
 import { CartItemsComponent } from './shopping-cart/cart-items/cart-items.component';
 import { SimpleModalModule } from 'ngx-simple-modal';
+import { ShirtFilterComponent } from './shirt/shirt-filter/shirt-filter.component';
+
 
 const appRoutes: Routes = [
   { path: '',      component: ShirtItemsComponent },
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     HeaderContainerComponent,
     ShirtItemDetailsComponent,
     CartItemComponent,
-    CartItemsComponent
+    CartItemsComponent,
+    ShirtFilterComponent
   ],
   imports: [
     BrowserModule,

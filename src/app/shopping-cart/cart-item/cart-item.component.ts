@@ -35,20 +35,20 @@ export class CartItemComponent implements OnInit {
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.deleteItem(shirt);
     this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage(Constants.MSG_CART_UPDATED);
+    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
   }
 
   increaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.increaseCount(shirt);
     this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage(Constants.MSG_CART_UPDATED);
+    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
   }
 
   decreaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.decreaseCount(shirt);
     this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage(Constants.MSG_CART_UPDATED);
+    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
   }
 }
