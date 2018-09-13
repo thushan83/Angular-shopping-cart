@@ -27,28 +27,27 @@ export class CartItemComponent implements OnInit {
 
   }
 
-  private updateCartStorage(items:IShirt[]){
-    this.storage.set(Constants.SHOPPING_CART_KEY,(new Cart()).init(items));
+  private notifyCartChange(){
+    let message = {event:Constants.MSG_CART_UPDATED , data:""};
+    this.messageService.sendMessage(message);
   }
 
   deleteCartItem(shirt: IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.deleteItem(shirt);
-    this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
+    this.notifyCartChange();
   }
 
   increaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
-    this.cart.increaseCount(shirt);
-    this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
+    this.cart.deleteItem(shirt);
+    this.notifyCartChange();
   }
 
   decreaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
-    this.cart.decreaseCount(shirt);
-    this.updateCartStorage(this.cart.items);
-    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
+    this.cart.deleteItem(shirt);
+    this.update
+    this.notifyCartChange();
   }
 }
