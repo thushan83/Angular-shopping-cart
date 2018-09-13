@@ -38,20 +38,22 @@ export class CartItemComponent implements OnInit {
   }
 
   deleteCartItem(shirt: IShirt){
-    this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
-    this.cart.deleteItem(shirt);
-    this.updateAndNotifyCartChange();
+     if(confirm("Are you sure to delete this item")) {
+        this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
+        this.cart.deleteItem(shirt);
+        this.updateAndNotifyCartChange();
+     }
   }
 
   increaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
-    this.cart.deleteItem(shirt);
+    this.cart.increaseCount(shirt);
     this.updateAndNotifyCartChange();
   }
 
   decreaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
-    this.cart.deleteItem(shirt);
+    this.cart.decreaseCount(shirt);
     this.updateAndNotifyCartChange();
   }
 }

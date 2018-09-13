@@ -8,7 +8,14 @@ import { Cart } from '../cart';
 import { ICart } from '../icart';
 import { SimpleModalService } from "ngx-simple-modal";
 import { CartItemsComponent } from '../cart-items/cart-items.component';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+@NgModule({
+  declarations: [ ShoppingCartComponent ],
+  exports: [ ShoppingCartComponent ],
+  imports: [ ShoppingCartComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

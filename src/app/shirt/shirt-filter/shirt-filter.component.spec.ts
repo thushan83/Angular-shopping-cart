@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShirtFilterComponent } from './shirt-filter.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 describe('ShirtFilterComponent', () => {
   let component: ShirtFilterComponent;
@@ -8,7 +10,11 @@ describe('ShirtFilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShirtFilterComponent ]
+      declarations: [ ShirtFilterComponent ],
+      imports: [
+        HttpClientModule,
+        StorageServiceModule
+      ]
     })
     .compileComponents();
   }));
