@@ -31,7 +31,8 @@ export class ShirtItemDetailsComponent implements OnInit {
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.addNewItem(this.shirt);
     this.storage.set(Constants.SHOPPING_CART_KEY, this.cart);
-    this.messageService.sendMessage({event:Constants.MSG_CART_UPDATED, data:""});
+    let message = {event:Constants.MSG_CART_UPDATED , data:""};
+    this.messageService.sendMessage(message);
     this.updateButtonCaption();
   }
 

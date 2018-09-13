@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { IMessage } from './imessage';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
     private subject = new Subject<any>();
 
-    sendMessage(message: string) {
-        this.subject.next({ text: message });
-    }
-
-    clearMessage() {
-        this.subject.next();
+    sendMessage(message: IMessage) {
+        this.subject.next(message);
     }
 
     getMessage(): Observable<any> {

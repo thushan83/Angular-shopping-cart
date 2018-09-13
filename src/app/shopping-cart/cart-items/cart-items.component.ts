@@ -49,7 +49,7 @@ export class CartItemsComponent  extends SimpleModalComponent<ConfirmModel, bool
      this.setCartContent();
      this.subscription = this.messageService.getMessage()
      .subscribe(message => {
-       if (message.text.event == Constants.MSG_CART_UPDATED){
+       if (message.event == Constants.MSG_CART_UPDATED){
           this.setCartContent();
        }
      });

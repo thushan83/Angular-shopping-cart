@@ -27,27 +27,31 @@ export class CartItemComponent implements OnInit {
 
   }
 
-  private notifyCartChange(){
+  private updateAndNotifyCartChange(){
+    this.updateCartStorage(this.cart.items);
     let message = {event:Constants.MSG_CART_UPDATED , data:""};
     this.messageService.sendMessage(message);
+  }
+
+  private updateCartStorage(items:IShirt[]){
+    this.storage.set(Constants.SHOPPING_CART_KEY,(new Cart()).init(items));
   }
 
   deleteCartItem(shirt: IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.deleteItem(shirt);
-    this.notifyCartChange();
+    this.updateAndNotifyCartChange();
   }
 
   increaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.deleteItem(shirt);
-    this.notifyCartChange();
+    this.updateAndNotifyCartChange();
   }
 
   decreaseCount(shirt:IShirt){
     this.cart = (new Cart()).init((this.storage.get(Constants.SHOPPING_CART_KEY) as ICart).items);
     this.cart.deleteItem(shirt);
-    this.update
-    this.notifyCartChange();
+    this.updateAndNotifyCartChange();
   }
 }

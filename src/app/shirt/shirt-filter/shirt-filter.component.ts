@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ShirtService } from '../shirt.service';
 import { IShirt } from '../ishirt';
 import { MessageService } from '../../services/message.service';
+import { Constants } from '../../constants';
 
 @Component({
   selector: 'app-shirt-filter',
@@ -51,7 +52,8 @@ export class ShirtFilterComponent implements OnInit {
   }
 
   onChange(value){
-    this.messageService.sendMessage({event:Constants.MSG_FILTER_REQUEST , data:value});
+    let message = {event:Constants.MSG_FILTER_REQUEST , data:value};
+    this.messageService.sendMessage(message);
   }
 
 }
